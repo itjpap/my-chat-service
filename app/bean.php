@@ -117,7 +117,7 @@ return [
     'user'               => [
         'class'   => ServiceClient::class,
         'host'    => '127.0.0.1',
-        'port'    => 18307,
+        'port'    => 18308,
         'setting' => [
             'timeout'         => 0.5,
             'connect_timeout' => 1.0,
@@ -138,7 +138,7 @@ return [
     ],
     'wsServer'           => [
         'class'    => WebSocketServer::class,
-        'port'     => 18308,
+        'port'     => 18309,
         'listener' => [
             'rpc' => bean('rpcServer'),
             // 'tcp' => bean('tcpServer'),
@@ -175,7 +175,7 @@ return [
     ],
     /** @see \Swoft\Tcp\Server\TcpServer */
     'tcpServer'          => [
-        'port'  => 18309,
+        'port'  => 18310,
         'debug' => 1,
     ],
     /** @see \Swoft\Tcp\Protocol */

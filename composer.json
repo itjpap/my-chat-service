@@ -35,7 +35,11 @@
     "swoft/breaker": "~2.0.0",
     "swoft/crontab": "~2.0.0",
     "swoft/session": "~2.0.0",
-    "swoft/devtool": "~2.0.0"
+    "swoft/devtool": "~2.0.0",
+    "lcobucci/jwt": "^3.3",
+    "mongodb/mongodb": "^1.7",
+    "swlib/saber": "^1.0",
+    "overtrue/wechat": "~5.0"
   },
   "require-dev": {
     "swoft/swlib": "~2.0.0",

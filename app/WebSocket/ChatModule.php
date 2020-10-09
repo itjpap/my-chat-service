@@ -10,12 +10,16 @@
 
 namespace App\WebSocket;
 
-use App\WebSocket\Chat\HomeController;
+use App\WebSocket\Controller\HomeController;
 use Swoft\Http\Message\Request;
 use Swoft\Session\Session;
+use Swoft\WebSocket\Server\Annotation\Mapping\OnMessage;
 use Swoft\WebSocket\Server\Annotation\Mapping\OnOpen;
 use Swoft\WebSocket\Server\Annotation\Mapping\WsModule;
-use Swoft\WebSocket\Server\MessageParser\JsonParser;
+//use App\WebSocket\Parser\JsonParser;
+use App\WebSocket\Parser\JsonParser;
+use Swoole\Server;
+use Swoole\WebSocket\Frame;
 use function basename;
 use function server;
 
@@ -24,6 +28,7 @@ use function server;
  *
  * @WsModule(
  *     "/chat",
+ *     defaultCommand="home.index",
  *     messageParser=JsonParser::class,
  *     controllers={HomeController::class}
  * )
@@ -39,25 +44,23 @@ class ChatModule
     {
         server()->push($request->getFd(), "Opened, welcome!(FD: $fd)");
 
-        $fullClass = Session::current()->getParserClass();
-        $className = basename($fullClass);
+//        $fullClass = Session::current()->getParserClass();
+//        $className = basename($fullClass);
 
-        $help = <<<TXT
-Message data parser: $className
-Send message example:
-
-```json
-{
-    "cmd": "home.index",
-    "data": "hello"
-}
-```
-
-Description:
-
-- cmd `home.index` => App\WebSocket\Chat\HomeController::index()
-TXT;
-
-        server()->push($fd, $help);
+//        server()->push($fd, 'in onOpen');
     }
+
+//
+//    /**
+//     * Notes:
+//     *
+//     * @author: lujianjin
+//     * datetime: 2020/10/8 20:29
+//     *
+//     * @OnMessage()
+//     */
+//    public function onMessage(Server $server, Frame $frame)
+//    {
+//        var_dump('this is frame->data:' . $frame->data);
+//    }
 }

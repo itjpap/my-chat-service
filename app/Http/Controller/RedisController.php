@@ -28,8 +28,7 @@ use function sgo;
 class RedisController
 {
     /**
-     * @Inject()
-     *
+     * @Inject("")
      * @var Pool
      */
     private $redis;

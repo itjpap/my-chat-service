@@ -27,7 +27,6 @@ class BreakerController
 {
     /**
      * @Inject()
-     *
      * @var BreakerLogic
      */
     private $logic;

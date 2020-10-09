@@ -11,7 +11,7 @@ services:
       - mysql
       - mongo
     volumes:
-      - "./:/var/www/swoft"
+      - ./:/var/www/swoft
     # command: php -S 0.0.0.0:80
 
 
@@ -21,7 +21,7 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - "//d/WWW/docker/tmp/redis:/mydata"
+      - //d/WWW/docker/tmp/redis:/mydata
   
 
   mysql:
@@ -32,7 +32,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - "//d/WWW/docker/tmp/mysql:/mydata"
+      - //d/WWW/docker/tmp/mysql:/mydata
 
 
   mongo:
@@ -41,6 +41,6 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - "//d/WWW/docker/tmp/mongo:/mydata"
+      - //d/WWW/docker/tmp/mongo:/mydata
 
     
