@@ -43,19 +43,16 @@ class HomeController
      */
     public function index(string $data)
     {
-        $msg = context()->getMessage();
-        var_dump('this is data:' . $data);
-        var_dump('this is msg:' . $msg);
+        if ($data === 'ping') {
+            Session::mustGet()->push('pong');
+            return true;
 
-//        if ($data === 'ping') {
-//            Session::mustGet()->push('pong');
-//            return true;
-//        }
-//
+        }
+        server()->sendToAll($data);
 //        $jsonData = $this->wsSendMessage->sendStatusMessage(-1, false, '数据格式有误', '数据格式有误');
 //        Session::mustGet()->push(json_encode($jsonData));
-//
-//        return false;
+
+        return false;
 
     }
 

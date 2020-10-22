@@ -39,12 +39,14 @@
     "lcobucci/jwt": "^3.3",
     "mongodb/mongodb": "^1.7",
     "swlib/saber": "^1.0",
-    "overtrue/wechat": "~5.0"
+    "overtrue/wechat": "~5.0",
+    "php-amqplib/php-amqplib": "^2.12",
+    "phpunit/phpunit": "^9.4",
+    "aliyuncs/oss-sdk-php": "^2.4"
   },
   "require-dev": {
     "swoft/swlib": "~2.0.0",
-    "swoft/swoole-ide-helper": "dev-master",
-    "phpunit/phpunit": "^7.5"
+    "swoft/swoole-ide-helper": "dev-master"
   },
   "autoload": {
     "psr-4": {

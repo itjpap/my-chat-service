@@ -53,7 +53,7 @@ class RpcProvider implements ProviderInterface
         $services = $this->agent->services();
 
         $services = [
-
+            $services->getResult()['user-center']['Address'] . ':' . $services->getResult()['user-center']['Port']
         ];
 
         return $services;
